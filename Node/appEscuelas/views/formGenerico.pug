@@ -1,0 +1,11 @@
+extends layout
+block content
+    h2=(alumno) ? "ACTUALIZANDO" : "CREANDO" 
+    p GENERICO 
+        form(action="/alumnos/update" , method="POST").form-group
+          input.form-control(type="hidden", name="id" value=alumno.id)
+          each val, index in nombres
+           label=val.nombreVisible
+           input.form-control(type="text", name=val.nombreVisible,  value=alumno[val.nombreClave])
+          input(type="submit")
+

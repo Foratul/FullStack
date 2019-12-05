@@ -1,0 +1,32 @@
+<p>register works!</p>
+
+<form [formGroup]="formulario" (input)="cosas($event)" class="form-group  " (ngSubmit)="enviar()" novalidate>
+
+    <label for="">Nombre</label>
+    <input type="text" formControlName="name" value="Mariano" class="form-control" required>
+    <label for="">Apellido</label>
+
+    <input type="text" formControlName="surname" class="form-control">
+    <label for="">Nombre Usuario</label>
+
+    <input type="text" formControlName="username" class="form-control">
+    <label for="">Password</label>
+
+    <input type="text" formControlName="password" class="form-control">
+    <label for="">Repite Passoword</label>
+
+    <input type="text" formControlName="password_repeat" class="form-control">
+    <label for="">Mail</label>
+
+    <input type="text" formControlName="mail" class="form-control">
+    <label for="">Direccion</label>
+
+    <input type="text" formControlName="address" class="form-control">
+    <label for="">Edad</label>
+
+    <input type="text" formControlName="age" class="form-control">
+    <input *ngIf="formulario.valid" type="submit">
+
+
+
+</form>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <form class="col-4" [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group">
+                <label>Titulo</label>
+                <input type="text" class="form-control" ngModel required formControlName="titulo">
+            </div>
+            <div class="form-group">
+                <label>Texto</label>
+                <input type="text" class="form-control" formControlName="texto">
+            </div>
+            <div>
+                <label>Autor</label>
+                <input type="textarea" class="form-control" formControlName="autor">
+            </div>
+            <div class="form-group">
+                <label>Imagen</label>
+                <input type="text" class="form-control" formControlName="imagen">
+            </div>
+            <div class="form-group">
+                <label>Fecha</label>
+                <input type="date" class="form-control" formControlName="fecha">
+            </div>
+            <div class="form-group">
+                <label>Categoria</label>
+                <select type="text" class="form-control" formControlName="categoria">
+                    <option value="categorized">Categorized</option>
+                    <option value="uncategorized">Uncategorized</option>
+                </select>
+            </div>
+
+
+            <input *ngIf="formulario.valid" type="submit">
+
+        </form>
+        {{mensaje}}
+    </div>
+</div>

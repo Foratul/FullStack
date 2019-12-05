@@ -1,0 +1,10 @@
+<p>formulario works!</p>
+{{mensaje | json}}
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div *ngFor="let propiedad of propiedades" class="form-group">
+        <label for="">{{propiedad}}</label>
+        <input type="text" formControlName={{propiedad}}>
+
+    </div>
+    <input type="submit">
+</form>

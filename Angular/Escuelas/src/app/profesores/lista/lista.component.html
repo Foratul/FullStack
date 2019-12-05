@@ -1,0 +1,31 @@
+<p>lista works!</p>
+
+<div>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Titulo</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let profesor of arrayProfesores">
+                <td>{{profesor.nombre}}</td>
+                <td>{{profesor.apellidos}}</td>
+                <td>{{profesor.titulo}}</td>
+                <td>{{profesor.fecha_ingreso}}</td>
+                <td>{{profesor.anos_activos}}</td>
+                <td>{{profesor.fk_sedes}}</td>
+                <td>
+                    <button class="btn btn-outline-success" (click)="editar(profesor)">editar
+                    </button>
+                </td>
+
+
+
+            </tr>
+        </tbody>
+
+    </table>
+
+
+</div>

@@ -1,0 +1,29 @@
+heroku.com
+
+instalar heroku-cli
+
+heroku login
+
+enganchar git 
+
+
+
+subir master
+
+
+seguir los pasos que pone en la web  que son
+
+git init
+heroku git:remote -a nombre de la app (en heroku)
+
+
+
+  git add .
+  git commit -am "comentario"
+  git push heroku master
+
+ESTOS 3 ULTIMO TAMBIEN PARA ACTUALIZARLA UNA VEZ COLGADA
+
+
+
+https://neoland2.herokuapp.com/

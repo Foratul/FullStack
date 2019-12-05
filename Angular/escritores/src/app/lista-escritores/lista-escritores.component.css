@@ -1,0 +1,10 @@
+.imagen {width:150px;
+height:150px;
+border-radius:50%;
+overflow:hidden;}
+
+.imagen img{width:100%;
+
+}
+
+ul li{list-style: none;}

@@ -1,0 +1,32 @@
+<p>tests works!</p>
+<ul>
+
+    <li *ngFor="let persona of datos">
+
+        {{persona.id}} {{persona.nombre}} {{persona.apellidos}} {{persona.edad}}
+        <button (click)="personaClicado(persona.id)">Informacion personal</button>
+
+    </li>
+
+    <button (click)="manejarClick()">Mayores de 30</button>
+
+
+    <form [formGroup]="formPersona" (ngSubmit)="onSubmit()">
+
+        ID <input type="text" formControlName="id" value="01">
+
+        NOMBRE<input type="text" formControlName="nombre">
+
+        APELLIDOS<input type="text" formControlName="apellidos">
+
+        EDAD<input type="text" formControlName="edad">
+
+        <input type="submit" value="ENVIAR">
+
+
+
+
+    </form>
+    <button (click)="resetDatos()">resetearMierdas</button>
+
+</ul>

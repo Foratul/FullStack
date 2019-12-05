@@ -1,0 +1,16 @@
+<p>lista-planetas works!</p>
+
+
+<div *ngFor="let planeta of planetas">
+
+    {{planeta.name}}
+</div>
+
+
+<button (click)="paginado(-1)">ANTERIOR</button>
+
+<button (click)="paginado(1)">SIGUIENTE</button>
+
+<button (click)="numeroAleatorio()">ALEATORIO</button>
+
+{{numero}}

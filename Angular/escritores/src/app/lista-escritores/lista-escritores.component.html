@@ -1,0 +1,20 @@
+<p>lista-escritores works!</p>
+
+<ul class="row no-gutter">
+
+    <li class="col-3" *ngFor="let escritor of arrayEscritores">
+        <div class="card" style="width: 18rem;">
+            <img [src]="escritor.imagen" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{escritor.nombre}} {{escritor.apellidos}}
+                </h5>
+                <p class="card-text">{{capitalize(escritor.pais)}} </p>
+                <a [routerLink]="['/escritores' , escritor.id , 'libros']" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+
+
+    </li>
+
+</ul>

@@ -1,0 +1,15 @@
+<router-outlet></router-outlet>
+<div class="container">
+
+  <div class="row">
+    <div class="col-5">
+      <app-shop (agregado)="agregaron($event)"></app-shop>
+    </div>
+    <div class="col-5">
+      <div class="col5">
+        <app-cart [listadoCart]="listadoCart"></app-cart>
+      </div>
+
+    </div>
+
+  </div>

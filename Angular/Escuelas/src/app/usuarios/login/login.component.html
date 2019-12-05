@@ -1,0 +1,11 @@
+<p>login works!</p>
+
+<form #formulario="ngForm" (ngSubmit)="onSubmit(formulario.value)">
+    <div class="form-group"> <label for="">email </label>
+        <input type="text" name="email" class="form-control" ngModel>
+    </div>
+    <div class="form-group"> <label for="">password </label>
+        <input type="password" name="password" class="form-control" ngModel>
+    </div>
+    <input type="submit" value="Enviar" class="btn">
+</form>

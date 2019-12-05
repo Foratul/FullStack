@@ -1,0 +1,35 @@
+express --view=pug nombreApp
+
+npm install
+
+17:10 02/12/2019
+
+en packge.json >>> "startdev": "nodemon ./bin/www"
+ y leugo 
+lanzas npm run startdev
+
+use delega peticiones a otros ficheros
+
+npm install dentro
+
+solo se puede hacer un res
+
+el render te lleva a una vista y luego usa variables
+
+
+res render
+
+npm install mysql --save
+
+PARAMS - URLs
+BODY - ENTIRE POST
+
+npm install bcryptjs
+
+npm install jwt-simple codificar token
+
+npm install dotenv (cosas del enviroment)
+require("dotenv").config();
+
+archiov .env para guardar variable globales en process.env
+

@@ -1,0 +1,9 @@
+extends layout
+block content
+     h2 Nuevo Profesor
+     form(action="/profesores/create" , method="POST").form-group
+      input(type="text" , name="nombre" , value="nuevo nombre")
+      input(type="text" , name="apellidos", value="apellidos")
+      input(type="text" , name="titulo" value="titulo")
+      input(type="submit")
+

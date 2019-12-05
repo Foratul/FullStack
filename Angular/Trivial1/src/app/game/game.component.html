@@ -1,0 +1,10 @@
+{{arrayPreguntas[preguntaActual].nombre}}
+{{arrayPreguntas[preguntaActual].correcta}}
+
+
+<botonera [respuestas]="arrayPreguntas[preguntaActual].respuestas" (evento)="comprobarRespuesta($event)">
+
+</botonera>
+
+
+{{mensaje}}

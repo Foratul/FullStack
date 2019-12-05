@@ -1,0 +1,46 @@
+extends layout
+
+block contenido
+    h1 Cabecera de la página
+    a(href="http//www.google.es") Google.es
+    
+    div.row
+         div.col-6
+                 div
+                        p Esto es un párrafo dentro del div
+                        span=nombre
+                        span Su nombre es #{nombre}
+         div.col-6
+                div(class="clase roja")
+                div.rojo
+                    p Dentro del div rojo
+            
+
+                //ESTO ES UN COMENTARIO HTML
+                //- COMENTARIO PUG
+                .rojo No hace falta poner el div
+
+                div#segundo
+                    p(class=clases[0]) Detro del div segundo
+
+                div#tercero
+                    case manzanas
+                        when 0
+                                p No tengo manzana
+                        when 1
+                                p Tengo 1 manzana
+                        default
+                                p Tengo #{manzanas} manzanas
+                div#cuarto
+                    ul  
+                      -for(let i=0; i<clases.length;i++)
+                         li=clases[i]
+    div#quinto
+            ul
+              #{clases=[]}
+              each cadena in clases
+                          //- li=cadena + " " + indice
+                          li #{cadena} #{indice}
+              else 
+                  li El array esta vacio
+                

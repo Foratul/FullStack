@@ -1,0 +1,43 @@
+mixin crearLista(array)
+  p Hola Mixin
+    if array
+     ul
+       each element in array
+          li=JSON.stringify(element)
+       else 
+          li Sin resultados
+    else 
+       li Lista nula
+
+
+
+doctype html
+html
+  head
+    title= title 
+    //- titulo por variable
+    block title
+      title Título por defecto
+
+    link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" , integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" , 
+  crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js", integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", crossorigin="anonymous")
+
+      //- las clase con punto junto
+
+  body
+    include includes/header.pug
+   
+
+      //- include para importar
+
+
+    div.container.mt-5
+        block contenido
+    .mt-5
+        block footer  
+          footer 
+              p Página creada con layout.pug
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque provident, eos odio repellendus, ea fugit voluptatem laudantium fuga a dignissimos in impedit reiciendis molestias dolorum minima architecto quam. Vel, vitae!

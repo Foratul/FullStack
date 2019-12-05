@@ -1,0 +1,6 @@
+<p>botonera works!</p>
+
+<ul *ngFor="let respuesta of respuestas, index as i">
+
+    <li (click)="respuestaClicada(i)">{{i}} , {{respuesta}}</li>
+</ul>

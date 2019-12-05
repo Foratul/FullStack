@@ -1,0 +1,23 @@
+<p>lista works!</p>
+
+<table>
+    <thead>
+        <th *ngFor="let propiedad of propiedades">{{propiedad}}</th>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let alumno of arrayAlumnos">
+
+            <td *ngFor="let propiedad of propiedades">
+                {{alumno[propiedad]}}
+
+            </td>
+
+
+        </tr>
+    </tbody>
+
+
+
+
+</table>

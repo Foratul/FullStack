@@ -1,0 +1,26 @@
+extends layout
+block content
+     h2 Nuevo Alumno
+       form(action="/alumnos/create" , method="POST").form-group
+        label Nombre
+        input.form-control(type="text", name="nombre")
+        label Apellidos
+        input.form-control(type="text", name="apellidos")
+        label Edad
+        input.form-control(type="text", name="nombre")
+        label Nombre
+        input.form-control(type="text", name="edad")
+        label Email
+        input.form-control(type="text", name="email")
+        label Note Media
+        input.form-control(type="text", name="notamedia")
+        label Fecha Matricula
+        input.form-control(type="text", name="fecha_matricula")
+        label  Matricula
+        input.form-control(type="text", name="matricula")
+        label Discapacidad
+        input.form-control(type="text", name="discapacidad")
+        label Sexo
+        input.form-control(type="text", name="sexo")    
+        input(type="submit")
+        button(onclick=) Crear nuevo alumno

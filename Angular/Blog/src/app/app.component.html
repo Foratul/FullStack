@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand nav-link" [routerLink]="['/blog']" routerLinkActive="active">BLOG</a>
+    <a class="navbar-brand nav-link" [routerLink]="['/new']" routerLinkActive="active">Formulario</a>
+
+</nav>
+
+
+<router-outlet></router-outlet>
+<router-outlet name='left'></router-outlet>
+<router-outlet name='right'></router-outlet>

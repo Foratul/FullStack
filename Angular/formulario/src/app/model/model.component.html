@@ -1,0 +1,66 @@
+<p>model works!</p>
+<div class="container">
+    <div class="row">
+        <form class="col-4" [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
+
+
+            </div>
+            <div *ngIf="!formulario.controls.nombre.valid">
+
+                El nombre está mal
+
+                <p *ngIf="formulario.controls.nombre.errors?.required">CAMPO REQUERIDO</p>
+                <p *ngIf="formulario.controls.nombre.errors?.minlength">Minima LONGITUD
+                    {{formulario.controls.nombre.errors?.minlength.requiredLength}}</p>
+
+
+            </div>
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" class="form-control" formControlName="apellidos">
+            </div>
+            <div>
+                <label>Edad</label>
+                <input type="number" maxlength="22" class="form-control" formControlName="edad">
+                <div *ngIf="formulario.controls.edad.errors?.errorEdadvalidator && formulario.controls.edad.touched">
+                    minimo {{formulario.controls.edad.errors?.min}}
+                    maximo {{formulario.controls.edad.errors?.max}}
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <div *ngIf="formulario.controls.email.value.length>=9">
+                    Formato incorrecto</div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="form-group">
+                <label>Repite Password</label>
+                <input type="password" class="form-control" formControlName="repite_password">
+            </div>
+            <div class="form-group">
+                <label>DNI</label>
+                <input type="text" class="form-control" formControlName="DNI">
+            </div>
+            <div class="form-group">
+                <label>Privacidad</label>
+                <input type="checkbox" class="form-control" formControlName="privacidad">
+            </div>
+            <input type="submit" value="enviar" [disabled]="!formulario.valid" *ngIf="formulario.valid"
+                class="btn btn-block btn-primary">
+            <p>{{formulario.valid}} VALID formulario</p>
+
+            <p>{{formulario.controls.nombre.valid}} VALID name</p>
+            <p>ERRORES {{formulario.controls.nombre.errors | json}} </p>
+            <!-- errors es nulo -->
+        </form>
+    </div>
+</div>

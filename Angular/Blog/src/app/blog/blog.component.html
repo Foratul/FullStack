@@ -1,0 +1,34 @@
+<div class="container">
+    {{mensaje}}
+
+    <select name="selector" id="" [(ngModel)]="selector">
+        <option value="titulo">TITULO</option>
+        <option value="texto">TEXTO</option>
+        <option value="autor" selected>AUTOR</option>
+        <option value="categoria">CATEGORIA</option>
+
+    </select>
+    {{selector}}
+
+
+    <button (click)="filtrar('absoluto')">FILTRAR ABSOLUTO</button>
+
+    <input id="filtro" [(ngModel)]="textofiltrado" name="filtro">
+
+    <button (click)="filtrar('relativo')">FILTRO RELATIVO</button>
+</div>
+<div class="row">
+    <div class="col-4 post" *ngFor="let post of arrayPosts">
+        <div>{{post.titulo}}
+            {{post.texto}}
+            {{post.autor}}
+            {{post.fecha}}
+            {{post.categoria}}
+        </div>
+
+
+
+
+    </div>
+
+</div>

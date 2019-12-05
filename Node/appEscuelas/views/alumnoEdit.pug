@@ -1,0 +1,15 @@
+extends layout
+block content
+
+
+
+
+     h2 Editadno Alumno #{alumno.id}
+           
+       form(action="/alumnos/update" , method="POST").form-group
+
+        input.form-control(type="hidden", name="id" value=alumno.id)
+        each val, index in nombres
+          label=val
+          input.form-control(type="text", name=val value=alumno[val])
+        input(type="submit")

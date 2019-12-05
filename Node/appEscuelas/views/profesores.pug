@@ -1,0 +1,28 @@
+include layout
+
+block content
+    h1 Estamos en profesores.pug
+    p=texto
+    table.table
+     thead
+      th nombre
+      th apellidos
+      th Fecha de Ingreso
+      th Años Activo
+      th Titulo
+      th Sedes
+     tbody
+     each profesor in arrayProfesores
+      tr
+       td=profesor.nombre
+       td=profesor.apellidos
+       td=profesor.fecha_ingreso
+       td=profesor.anos_activo
+       td=profesor.titulo
+       td=profesor.fk_sedes
+       td
+        a.btn.btn-outline-success(href="profesores/edit/"+profesor.id) EDITAR
+    
+     a.btn.btn-outline-success(href="profesores/new/") CREAR NUEVO
+
+       

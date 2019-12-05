@@ -1,0 +1,25 @@
+<p>shop works!</p>
+{{selector}}
+
+<select (change)="getCategoria($event)">
+    <option value="">TODOS</option>
+    <option value="/ipad">IPAD</option>
+    <option value="/macbook">MACBOOK</option>
+    <option value="/iphone">IPHONE</option>
+    <option value="/accesorio">ACCESORIOS</option>
+    <option value="/OPCION_TROLL">OPCION_TROLL</option>
+
+
+</select>
+
+<button (click)="recoverProducts()">RECOVER</button>
+
+
+
+<div *ngFor="let producto of productos">
+
+    {{producto.id}}{{producto.name}}
+    <img [src]="producto.image">
+    <button (click)="addToCart(producto.id)">AÑADIR AL CARRO</button>
+
+</div>

@@ -1,0 +1,12 @@
+<p>detalle-escritor works!</p>
+<div *ngIf="esc">
+
+    {{esc?.nombre}}
+</div>
+
+<div *ngIf="!esc">
+
+    {{mensaje}}
+</div>
+
+<router-outlet></router-outlet>

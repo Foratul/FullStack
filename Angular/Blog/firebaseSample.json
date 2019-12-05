@@ -1,0 +1,22 @@
+{
+    "personas": [
+        {
+            "nombre": "Mario",
+            "apellidos": "Girón",
+            "direccion": "Calle Gran Via",
+            "edad": 23
+        },
+        {
+            "nombre": "Rosa",
+            "apellidos": "García",
+            "direccion": "Calle Leganitos 14",
+            "edad": 55
+        },
+        {
+            "nombre": "Jose",
+            "apellidos": "Sanchez",
+            "direccion": "Calle False",
+            "edad": 45
+        }
+    ]
+}

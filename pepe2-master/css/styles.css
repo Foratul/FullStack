@@ -1,0 +1,358 @@
+body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+height:800px;
+width:600px;
+overflow:hidden;
+transition-duration:1s;
+transition:ease-in-out;
+font-family: 'Open Sans', sans-serif;
+background-color:rgb(207, 188, 188);
+margin:auto;
+position:absolute;
+box-sizing: border-box;
+user-select: none;
+}
+
+#padre{transition-duration:1s;
+}
+
+
+#calculadoraheader{
+  position:absolute;
+  
+  width:222px;
+  height:395px;
+  transition-duration:1.55s;
+  left:-10px;
+  /* padding-left:2px; */
+  border-radius:20px;
+  border:10px solid rgba(0,16,100);
+  color:white;
+  cursor: move;
+  z-index: 10;
+  /* display:inline-block; */
+
+
+  }
+
+#calculadora {   position: absolute;
+  top:70px;
+  left:100px;
+  z-index:11;
+  
+  /* transform:scale(0.8); */
+}
+
+.flex-container {
+  position:absolute;
+  display: flex;
+  width:228px;
+  height:355px;
+  transition-duration:1.55s;
+  overflow:hidden;
+  flex-wrap: wrap;
+  background-color: rgb(236,233,216);
+  border-radius:12px;
+  /* border:10px solid rgb(0,16,100); */
+  border-top:50px solid rgba(0,16,100);
+}
+
+#calculadora.plegada
+{}
+#calculadora.plegada .flex-container
+
+{
+   
+  height:100%;
+  overflow:hidden;
+  transition-duration:1.5s;
+  /* display:none; */
+}
+
+#calculadora.plegada  #calculadoraheader{
+ height:33px;
+  /* background-color: rgb(0,16,100); */
+  transition-duration:1.55s;
+
+}
+  #calculadora.cerrada
+  {transform: scale(0.1) rotateX(720deg);
+    filter:blur(2px);
+
+    transition-duration:5s;}
+  #calculadora.cerrada .fa-window-close{
+    position:absolute;
+    transform:scale(20);
+    transition-duration:10s;
+    border-radius:50%;
+    background-color:rgba(255, 255, 255, 0);
+    cursor:zoom-in;
+    z-index:222;
+
+  /* {top:76px; */
+  /* left:0px; */
+  
+}
+  .fa-window-close {
+ color:rgb(227,72,24);
+ background-color:white;
+ 
+ border:none;
+ cursor:pointer;
+ font-size:20px;}
+
+ .fa-window-close:hover {
+  transform:scale(1.2);
+  transition-duration:1s;}
+
+  .fa-window-close:hover .tooltiptext {display:block}
+
+  
+#pantallaarriba{
+  position:absolute;
+width:91%;
+text-align:right;
+top:-10px;
+user-select: all;
+
+
+}
+#pantallaabajo
+{
+  position:absolute;
+
+  width:91%;
+  color:blue;
+font-size:27px;
+text-align:right;
+bottom:0px;
+user-select: all;
+
+}
+
+#pantallacalc{
+  position:relative;
+font-family: 'Space Mono', monospace;
+background-color: #ada3a3ac;
+  background-image: linear-gradient(to bottom, rgb(55, 52, 52) 0% ,   rgb(125, 125, 125) 50%,
+  rgba(255, 236, 236, 0.111) 100%);
+width:94%;
+height:85px;
+padding:10px;
+border: 2px solid black;
+display:flex;
+flex-wrap: wrap;
+overflow:auto;
+box-sizing: border-box;
+
+}
+
+i.far
+{padding:6px  0px;
+  font-size:19px;
+  cursor:pointer;
+ }
+
+ .far:hover{ transform:scale(1.2);
+  transition-duration:2s;}
+
+  #bandejar.girado{
+  transform:rotateX(180deg);
+  }
+
+ 
+  .flex-container > div {
+    /* float: left; */
+    width: 35px;
+    margin: 4px;
+    text-align: center;
+    align-content: center;
+    line-height: 40px;
+    font-size: 20px;
+    height:35px;
+    z-index:1000;
+    /* overflow:hidden; */
+  }
+ 
+  button.clicable {width: 40px;
+    height:35px;
+    border-radius: 8px;
+    font-size:14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6); 
+    outline:none;
+    cursor:pointer;  
+  }
+  button.clicable:hover{background-color:rgba(155, 183, 13, 0.785);
+    border:2px solid yellow;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.1);
+    transition-duration:1.2s;
+  }
+/* 
+  button.small {
+    width: 14px;
+    border: none;
+    padding: 0px;
+    height: 20px;
+    font-size: 10px;
+    transform: rotate(25DEG);} */
+
+/* .flex-container > div.small {  height:15px; width:6px;  
+  text-align:center; */
+/* } */
+
+  .operador
+  {background-color:rgb(129, 129, 156);
+  }
+
+  .memoria
+  {
+    background: rgba(147,206,222,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 28%, rgba(73,165,191,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(147,206,222,1)), color-stop(28%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 28%, rgba(73,165,191,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 28%, rgba(73,165,191,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 28%, rgba(73,165,191,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 28%, rgba(73,165,191,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+  }
+
+  
+
+  .flex-container .ancho2 {
+    float: right;
+    width: 78px;
+    
+  }
+
+  .flex-container .alto2 {
+    position:relative; 
+    top:-47px;
+    line-height: 90px;   
+    height:90px  ;
+  }
+
+  #iconocalc{}
+
+  #Resultado {height:78px;}
+  #Digito0 {width:82px;}
+  #botonModal2 {border-radius:50%;
+    outline:none;cursor:help;}
+
+
+#disclaimer{
+  width:600px;
+border: 2px solid black;
+position:absolute;
+top: 38px;
+left: 650px;
+z-index:-5;
+}
+
+.container
+{ padding:15px;
+ width:95vw;
+height:100vh;
+font-size:22px;
+filter:blur(0px);
+position:absolute;
+background-image:url("../img/windows98.png");
+background-size:auto;
+
+background-repeat: no-repeat;
+}
+
+#modalid.activa ~ .container{
+filter:blur(3px);
+}
+#modalid.activa ~ #padre{
+  position:relative;
+  z-index:5;
+  filter:blur(10px);
+  transition-duration:2s;
+}
+#modalid.activa ~ #disclaimer{
+  position:relative;
+  filter:blur(2px);
+
+  }
+
+
+#modalid{
+width:100vw;
+height:100vh;
+top:0;
+left:-100%;
+transition-duration:0.9s;
+position:fixed;
+z-index:100
+}
+
+.modal-box{
+    color:rgb(0, 0, 0);
+    font-size:18px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 20px -2px rgba(255, 255, 255, 0.7);
+    position:fixed;
+    left:150%;
+    top:15%;
+    transition-duration:1s;
+    overflow:auto;
+    z-index:999;
+    user-select:text;
+      }
+
+#modalid.activa
+
+{   background-color:rgba(0,0,0,0.6);
+    top:0;
+    left:0;
+    transition-duration:0s;
+    position:fixed;
+
+
+}
+
+#modalid.activa .modal-box {
+    position:fixed;
+    left:55%;
+    top:30px;
+    transition-duration:0.6s;
+ 
+
+}
+
+#botonModal{
+    position:absolute;
+    top:15px;
+    right:15px;
+    transition-duration:10s;
+}
+
+.modal-box #botonModal:hover{transform:rotate(90deg);
+transition-duration:12s;}
+
+h2 , h3 {text-align:center;}
+
+.tooltiptext {
+  display:none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  top: -100%;
+  left: 105%; 
+  z-index: 10000;
+}
+
+.oculta{
+
+  display:none;
+ } 

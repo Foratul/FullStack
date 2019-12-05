@@ -1,0 +1,35 @@
+include layout
+
+block content
+    h1 Estamos en alumnos.pug
+    if exito==="true"
+            p Tarea realizada con exito
+    table.table
+         thead
+         th id
+         th nombre
+         th apellidos
+         th edad
+         th email
+         th notamedia
+         th fecha matricula
+         th sexo
+         th discapacidad
+         each alumno in arrayAlumnos
+           tr
+             td=alumno.id
+             td=alumno.nombre
+             td #{alumno.apellidos}
+             td=alumno.edad
+             td=alumno.email
+             td=alumno.notamedia
+             td=alumno.fecha_matricula
+             td #{alumno.sexo}
+             td=alumno.discapacidad + " %"
+             td 
+              a.btn.btn-outline-success(href="alumnos/edit/"+alumno.id) EDITAR
+
+a.btn.btn-outline-success(href="alumnos/new/") CREAR NUEVO ALUMNO
+
+ 
+

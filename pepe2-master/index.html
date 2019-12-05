@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora Vintage 0.9</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+   <link href="https://fonts.googleapis.com/css?family=Roboto|Space+Mono" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+<div id="modalid" class="modal">
+
+  <!-- PONGO PRIMERO EL MODAL PORQUE ME INTERESA LUEGO TENER en EL CSS SELECTORES + y ~ para aplicar-->
+
+
+  <div class="modal-box">
+  <button id="botonModal" onclick="modal()"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+      <h2>Histórico de operaciones</h2>
+      <ul id="operaciones">
+               
+        
+        
+        </ul>
+
+  </div>
+</div>
+
+<div class="container">
+<button id="botonModal" onclick="modal()"><i class="fas fa-arrow-alt-circle-left"></i> Historial</button>  
+</div>
+
+
+  <div id=padre>
+  <div id="calculadora" class="plegada">
+    <!--  con clase decidimos si empieza plegada o no , se cambia con un click -->
+  <div id="calculadoraheader"><span><i class="fas fa-calculator"></i> Calculadora 0.9</span><i class="botonera">
+      <i id="bandejar" class="iconocalc far fa-window-minimize"></i>
+      <i class="iconocalc far fa-window-maximize" id="plegar"><span class="tooltiptext">Plegar</span></i>
+      <i id="cerrar" class="iconocalc fas fa-window-close"></i>
+  </i>
+  </div>
+
+  <div class="flex-container">
+
+      <div id="pantallacalc">
+          <div id="pantallaarriba"></div>
+          <div id="pantallaabajo">0</div>
+        </div>
+    <div class="bloque1"><button class="clicable memoria">MC</button></div>
+    <div class="bloque1"><button class="clicable memoria">MR</button></div>
+    <div class="bloque1"><button class="clicable memoria">MS</button></div>
+    <div class="bloque1"><button class="clicable memoria">M+</button></div>
+    <div class="bloque1"><button class="clicable memoria">M-</button></div>
+    <!-- <div class="bloque1 small"><button class="clicable operador small">(</button></div>   -->
+    <div class="bloque1 small"><button class="small" id="botonModal2" onclick="modal()">H</button></div> 
+    <!-- <div class="bloque1 small"><button class="clicable operador small">)</button></div>  -->
+    <!-- POR NO AÑADIR OTRO LISTENER -->
+    <div class="bloque1"><button class="clicable operador">CE</button></div>
+    <div class="bloque1"><button class="clicable operador">C</button></div>
+    <div class="bloque1"><button class="clicable operador">+-</button></div>  
+    <div class="bloque1"><button class="clicable operador">√</button></div>
+    <div class="bloque1"><button class="clicable">7</div>
+    <div class="bloque1"><button class="clicable">8</div>
+    <div class="bloque1"><button class="clicable">9</div>
+    <div class="bloque1"><button class="clicable operador">/</div>
+    <div class="bloque1"><button class="clicable operador">%</div>
+    <div class="bloque1"><button class="clicable">4</div>
+    <div class="bloque1"><button class="clicable">5</div>
+    <div class="bloque1"><button class="clicable">6</div>
+    <div class="bloque1"><button class="clicable operador">*</div>
+    <div class="bloque1"><button class="clicable operador">1/x</div>
+    <div class="bloque1"><button class="clicable">1</div>
+    <div class="bloque1"><button class="clicable">2</div>
+    <div class="bloque1"><button class="clicable">3</div>
+    <div class="bloque1"><button class="clicable operador">-</div>
+    <div class="ancho2"><button  class="clicable" id="Digito0">0</div>  
+    <div class="bloque1"><button class="clicable operador">.</div>  
+    <div class="bloque1"><button class="clicable operador">+</div>
+    <div class="alto2"><button class="clicable operador" id="Resultado">=</button></div>  
+    <div class="bloque1"><button class="clicable operador">(</button></div>  
+    <div class="bloque1"><button class="clicable operador">)</button></div>  
+
+
+  
+  
+  </div>
+</div>
+</div>
+
+<div id="disclaimer"><h2>NOTAS & DISCLAIMER (widescreen)</h2><ul><li>La construcción de la calculadora se ha basado en asignar a los botones clases y hacer que el javascript discrimine cual se ha pulsado, si digitos u operadores y luego haga sus formulas, con atención a los casos especiales para no poner dos operadores seguidos, etc. </li>
+  
+  <li> La memoria, raiz cuadrada y demás funciones originales están operativas al 90% , a falta de depurar algunos fallos  </li>
+   <li> EL % de WINDOWS es muy puñetero, le CALCULA el X porciento del resultado PARCIAL que EXISTE y lo deja en la pantalla
+</li>
+    
+  <li>Para el histórico de operaciones se ha reciclado el modal. Los botones de minimizar, maximizar y cerrar funcionan, a falta de hacer únicos los dos primeros</li>
+
+ <li>Se puede introducir texto por teclado sin ser un input, el mismo listener que se usa para llamar a los clicks está para adaptarse a event.key, es cuestión de canalizar los carácteres especiales por parámetro. Sin implementar más allá del listener y los números.</li>
+
+ <li>El código es enrevesado, pero va dando el resultado parcial automáticamente sin entrar en campos de minas porque el usuario mande bombas lógicas etc. El único código ajeno fusilado de por ahí sin pudor es el del desplazamiento de la calculadora arrastrando</li>
+
+ </ul></div>
+
+
+
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

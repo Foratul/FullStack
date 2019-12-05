@@ -1,0 +1,60 @@
+<div class="row text-left ">
+
+    <table class="col-7  table table-striped mt-5">
+        <thead class="thead-dark">
+            <tr>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th>Visible</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let imagen of arrayImagenes index as id">
+                <td> {{imagen.titulo}}</td>
+                <td> {{imagen.descripcion}}</td>
+                <td> {{imagen.url}}</td>
+                <td (click)="activeToggle(imagen)"> {{imagen.activa}}</td>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-whatever="@getbootstrap" (click)="editarImagen(imagen, id)">EDITAR</button>
+                <button class="btn btn-danger" (click)="eliminarImagen(id)">ELIMINAR</button>
+                <!-- le mando la imagen para que coja los valores y el index a modo de pseudo ID -->
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- FORM CREADO Y VISIBLE CON EL CLICK, DESACTIVADO CON EL ONSUBMIT -->
+
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="col-12" *ngIf="editando" [formGroup]="formulario" (ngSubmit)="onSubmit(imagen)">
+                <p><b> EDITANDO IMAGEN</b> {{id}}</p>
+                <label for="">TITULO</label>
+                <input type="text" id="titulo" formControlName="titulo">
+                <label for="">DESCRIPCION</label>
+                <input type="text" id="descripcion" formControlName="descripcion">
+                <label for="">URL</label>
+                <input type="text" class="col-8" id="url" formControlName="url">
+                <label for="">VISIBLE</label>
+                <select type="select" id="activa" formControlName="activa">
+                    <option [value]="true">ACTIVO</option>
+                    <option [value]="false">NO ACTIVO</option>
+                </select>
+                {{mensaje}}
+
+                <hr>
+                <div class="modal-footer ">
+                    <input class="btn btn-primary" type="submit">
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
